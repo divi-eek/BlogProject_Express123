@@ -44,7 +44,7 @@ app.use(express.urlencoded({extended:false}))
 app.set('view engine','ejs')
 
 //link css image
-app.use(express.static('public'))
+app.use(express.static('Public'))
 
 //route load
 app.use('/',web)
