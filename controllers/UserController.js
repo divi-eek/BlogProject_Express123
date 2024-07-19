@@ -115,7 +115,7 @@ class UserController {
         }
       } 
       else {
-        req.flash("you are not a registered user");
+        req.flash("error","you are not a registered user");
         res.redirect("/login");
       }
     } catch (error) {
