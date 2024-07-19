@@ -99,7 +99,7 @@ class UserController {
             res.redirect("/admin/dashboard");
           }
 
-          if (user.role == "user" && user.is_verified && user.status == "approved") {
+          if (user.role == "user" && user.is_verified ==1  && user.status == "approved") {
             let token = jwt.sign({ ID: user.id }, "kojihugvhijokjhvgjokkvv89");
             //console.log(token);
 
