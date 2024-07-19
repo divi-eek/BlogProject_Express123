@@ -81,9 +81,13 @@ h1,h4{
 }
 
   
-  @media (max-width:768px) {
+  @media (max-width:800px) {
  
      .navimg{
          display: none;
+     }
+
+     .xyz{
+      margin-top:60px;
      }
   }
