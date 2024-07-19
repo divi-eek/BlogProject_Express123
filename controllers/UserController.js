@@ -190,14 +190,15 @@ class UserController {
     let info = await transporter.sendMail({
       from: "test@gmail.com", //sender address
       to: email, //list of receivers
-      subject: "For Verification mail", //subject line
+      subject: "Verification Mail for Blogger", //subject line
       text: "Hello", //plain text body
       html:
-        "<p>Hii " +
+        "<p>Hey " +
         name +
         'Please click here to <a href="https://blogproject-express123.onrender.com/verify?id=' +
         user_id +
-        '">Verify </a> Your mail </p>.',
+        '"> Verify </a> your mail </p>.'
+
     });
 
     //console.log("Message sent: %s",info.messageId)
