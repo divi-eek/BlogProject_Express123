@@ -1,0 +1,151 @@
+<%-include('./header.ejs')  %>
+
+
+<br><br><br><br><br>
+<div class="container mtb-40">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Create Your Blog</h1>
+            <% if(msg.length>0){ %>
+                <div class="alert alert-danger">
+                    <!-- to print -->
+                    <%= msg %>
+
+                </div>
+        <%}%>
+
+
+
+            <form action="/userInsert" method="post" enctype="multipart/form-data" id="myvalidation">
+                <div class="form-group">
+                    <input type="text" name="user" class="form-control" placeholder="Enter Your Name" autocomplete="off">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control"  id="emails" placeholder=" Email" autocomplete="off">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="password" name="password"  id="password" class="form-control" placeholder="Password" autocomplete="off">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="password" name="cpassword" class="form-control" placeholder="confirm password" autocomplete="off">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" name="phone" class="form-control" placeholder="phonenumber" autocomplete="off" id="mobileNumber">
+                </div>
+                <br>
+                <div class="form-group">
+                <textarea name="address" id="" class="form-control" autocomplete="off">Address</textarea>                </div>
+                <br>
+                <div class="form-group">
+                    <input type="file" name="image" class="form-control" placeholder="Image" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger">Sign In</button>                          
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+
+let $registerForm = $('#myvalidation')
+
+$registerForm.validate({
+    rules: {
+        user: {
+            required: true,
+            lettersOnly: true
+        },
+        phone: {
+            required: true,
+            numericonly: true,
+            minlength:10,
+            maxlength:12
+        },
+        password: {
+            required: true,
+            minlength: 6,
+            
+          
+        },
+        cpassword: {
+            required: true,
+            equalTo:"#password"
+        },
+        email: {
+            required: true,
+            email: true
+        }
+
+    },
+    messages: {
+        name: {
+            required: "Name can't be blank",
+            lettersOnly: "invalid name"
+        },
+        mobile: {
+            required: "Mobile Number is required",
+            numericonly: "Phone number Invalid",
+            minlength: 'min 10 digit',
+            maxlength: 'mx 12 digit'
+
+        },
+        password: {
+            required: "Password can't be blank",
+            minlength: 'min 6 digit',
+            
+           
+            
+        },
+        cpassword: {
+            required: "Confirm Password",
+            equalTo:"Password mismatch"
+            
+        },
+        email: {
+            required: "Email can't be required",
+            email: "invalid email"
+        }
+    },
+    errorPlacement: function (error, element) {
+        if (element.is(":radio")) {
+            error.appendTo(element.parents(".gen"));
+        } else {
+            error.insertAfter(element)
+        }
+    }
+
+
+})
+
+
+jQuery.validator.addMethod("lettersOnly", function (value, element) {
+    return  /^[a-z," "]+$/i.test(value);
+}, "Letters and spaces only please");
+
+jQuery.validator.addMethod("numericonly", function (value, element) {
+    return /^[0-9]+$/i.test(value);
+}, "Please enternumber only.");
+
+
+    
+})
+</script>
+
+
+
+<br><br><br><br>
+
+
+<%-include('./footer.ejs')  %>

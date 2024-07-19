@@ -1,0 +1,112 @@
+<%-include("../header.ejs") %>
+  <%-include("../sidebar.ejs") %>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Category</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Category Page</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+
+      <% if(msg.length>0){ %>
+        <div class="alert alert-success">
+            <!-- to print -->
+            <%= msg %>
+
+        </div>
+<%}%>
+
+      <div class="card">
+        <div class="card-header">
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#category">Add Category</button>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% c.forEach((item)=>{ %>
+                <tr>
+                  <td><%=item.id %></td>
+                <td><%=item.name %></td>
+                <td>
+                  <a href="/admin/categoryView/<%= item.id %>" class="btn btn-info"> View</a>
+                  <a href="/admin/categoryEdit/<%= item.id %>" class="btn btn-info">Edit</a>
+                  <a href="/admin/categoryDelete/<%= item.id %>" class="btn btn-info">Delete</a>
+                </td>
+                </tr>
+
+             <%  }) %>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<!--modal category-->
+<div class="modal fade" id="category">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Category</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+              <form action="/admin/categoryInsert" method="post">
+                <div class="form-group">
+                  <label for="">Category Name</label>
+                  <input type="text" name="n" id="" class="form-control">
+                </div>
+          
+              <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+      
+      </div>
+      
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!--modal end-->
+<%-include("../footer.ejs") %>

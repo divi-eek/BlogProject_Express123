@@ -1,0 +1,75 @@
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+
+body{
+	background: linear-gradient(-45deg,#FFF4C0, #e9beaf,#F1D8B7, #f4c97f);
+	/* background-size: 400% 400%; */
+	animation: gradient 45s ease infinite;
+	/* height: 100vh; */
+}
+
+h1,h4{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   text-align: center;
+}
+
+.cat{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   text-align: justify;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.navbar{
+    background-color:#7C3E25!important;
+ }
+
+ .navbar-nav li {
+   padding: 0 10px;
+}
+
+
+ .navbar-nav li a {
+  color: #ffecec !important;
+  font-weight: 600;
+  font-size: 20px;
+     padding-top: 20px;
+     text-transform: uppercase;
+     font-size:10 rem;
+     line-height: 50px;
+     letter-spacing: 4px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+
+  }
+
+  .login-box {box-shadow: 1px 1px 7px #666;padding:20px;margin-top:8%}
+
+
+  .btn {
+   margin-top: 40px;
+   border-color: darkorange;
+   background-color: darkorange;
+}
+
+  
+  @media (max-width:768px) {
+ 
+     .navimg{
+         display: none;
+     }
+  }

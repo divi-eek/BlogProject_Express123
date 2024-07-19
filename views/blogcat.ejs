@@ -1,0 +1,35 @@
+<%-include('./header.ejs')  %>
+
+<br><br><br><br>
+<div class="container">
+  <div class="row mt-5 mb-5 cat">
+    <!--row starts-->
+    <% bc.forEach((item)=>{ %>
+
+      <div class="col-md-4 mt-5">
+        <div class="card shadow-lg h-100">
+          <img
+            class=""
+            src="<%= item.image.url %>"
+            height="200"
+          />
+          <div class="card-body">
+            <p>
+              Ravi, <%= item.createdAt.toLocaleDateString() %>
+            </p>
+
+            <h3><%= item.title %></h3>
+            <p><%=item.description.slice(0,110) %></p>
+            <a href="/details/<%=item.id%>" class="btn btn-danger"> Read More...</a>
+          </div>
+        </div>
+      </div>
+
+   <% }) %>
+  </div>
+  <!--row ends-->
+
+</div>
+  <!--container end-->
+
+<%-include('./footer.ejs')  %>

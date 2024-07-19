@@ -1,0 +1,39 @@
+<%-include('./header.ejs')  %>
+
+    <img src="/image/Be a Blo (1).png" alt="" style="background-size: cover;" class="w-100">
+
+    <div class="container">
+      <div class="row mt-5 mb-2">
+        <!--row starts-->
+        <% b.forEach((item)=>{ %>
+
+          <div class="col-md-4 mt-5" >
+            <div class="card shadow-lg h-100" style="background-color: beige;">
+              <img
+                class="card-img-top"
+                src="<%= item.image.url %>"
+                height="200"
+              />
+              <div class="card-body">
+                <p>
+                  Ravi, <%= item.createdAt.toLocaleDateString() %>
+                </p>
+  
+                <h3><%= item.title %></h3>
+                <p><%=item.description.slice(0,100) %></p>
+                <a href="/details/<%=item.id%>" class="btn btn-danger"> Read More...</a>
+              </div>
+            </div>
+          </div>
+
+       <% }) %>
+      </div>
+      <!--row ends-->
+
+      <center><a href="" class="btn btn-danger mt-5 mb-5">View More...</a></center>
+
+    </div>
+    <!--container end-->
+
+
+    <%-include('./footer.ejs')  %>

@@ -1,0 +1,44 @@
+<%-include('./header.ejs')  %>
+
+
+<br><br><br><br><br>
+<div class="container mtb-40">
+    <div class="row justify-content-center">
+        <div class="col-md-6 login-box">
+            <h1>Login</h1>
+            <% if(msg1.length>0){ %>
+                <div class="alert alert-success">
+                    <!-- to print -->
+                    <%= msg1 %>
+
+                </div>
+        <%}%>
+
+        <% if(msg2.length>0){ %>
+            <div class="alert alert-danger">
+                <!-- to print -->
+                <%= msg2 %>
+
+            </div>
+    <%}%>
+
+        
+            <form action="/verifylogin" method="post">
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder=" Email or Username" autocomplete="off">
+                </div>
+                <div class="form-group mt-4">
+                    <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
+                </div>  
+                   
+               <center> <button class="btn btn-danger" type="submit">Log In</button>  </center>                             
+                <div class="form-group ">
+                    <center><a class="btn btn-danger" href="/signin">SIGN IN</a>   </center>                            
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+
+<%-include('./footer.ejs')  %>

@@ -1,0 +1,75 @@
+<%-include('./header.ejs')  %>
+<br><br><br>
+
+<section class="blog-detail mtb-40" style="margin-top: 8rem">
+    <div class="container">
+       <div class="row">
+        <div class="col-md-8">
+            <div class="blog-left">
+                <h1><%=d.title %></h1>
+            <div class="posted-ob">
+                <p><span>
+                    <%= d.createdAt.toLocaleDateString() %>
+                </span></p>
+
+            </div>
+                <div class="detail-img">
+                    <img src="<%= d.image.url%>" alt="" width="500px" height="400px">
+                </div>
+                <br>
+                <div>
+                    <div class="blog-desc">
+                        <p style="text-align:justify;">
+                            <%= d.description %>
+                        </p>
+                    </div>
+                </div>
+            </div> <!--blog left-->
+        </div> <!--col-md-8-->
+
+        <div class="col-md-4">
+          <div class="blog-right">
+            <div class="right-widget recent-post">
+                <h3>Recent Blogs</h3>
+                <a href="">
+                    <% r.forEach((recentitem)=>{  %>
+                      <a href="/details/<%= recentitem.id %>">
+                        <div class="rb-box">
+                            <div class="rb-box-img">
+                                <img src="<%= recentitem.image.url %>" width="200" height="100" alt="blog1">
+                            </div>
+                            <div class="rb-box-desc">
+                                <h4 style="font-size:13 px">
+                                    <%= recentitem.title %>
+                                </h4>
+                                <p>
+                                    <%= recentitem.createdAt.toLocaleDateString() %>
+                                </p>
+                            </div>
+                        </div>
+                      </a>
+
+                   <% }) %>
+
+                </a>
+
+                <div class="right-widget categories">
+                    <h3>Categories</h3>
+                    <% c.forEach((categoryitem)=>{%>
+                        <ul>
+                            <li><a href="/blogCat/<%=categoryitem.name %>">
+                                <%=categoryitem.name %>
+                            </a></li>
+                        </ul>
+                  <%  }) %>
+                </div>
+            </div><!--right-widget recent-post-->
+          </div>  
+        </div> <!--col-md-4-->
+       </div> <!--row end-->
+    </div> <!--container-->
+</section>
+
+
+<br><br><br><br><br><br>
+<%-include('./footer.ejs')  %>
