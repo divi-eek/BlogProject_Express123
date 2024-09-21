@@ -7,7 +7,7 @@
 
 
 body{
-	background: linear-gradient(-45deg,#FFF4C0, #e9beaf,#F1D8B7, #f4c97f);
+	background: linear-gradient(-45deg,#a4e0eb, #aee5f6,#b1d5ef,#d7f9f8);
 	/* background-size: 400% 400%; */
 	animation: gradient 45s ease infinite;
 	/* height: 100vh; */
@@ -50,7 +50,7 @@ h1,h4{
 
 
 .navbar{
-    background-color:#7C3E25!important;
+    background-color:#003f5c!important;
  }
 
  .navbar-nav li {
@@ -59,7 +59,7 @@ h1,h4{
 
 
  .navbar-nav li a {
-  color: #ffecec !important;
+  color: #d7f9f8 !important;
   font-weight: 600;
   font-size: 20px;
      padding-top: 20px;
@@ -76,8 +76,8 @@ h1,h4{
 
   .btn {
    margin-top: 40px;
-   border-color: darkorange;
-   background-color: darkorange;
+   border-color: #003f5c;
+   background-color: rgb(9, 24, 57);
 }
 
   
