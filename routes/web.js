@@ -25,7 +25,7 @@ route.get('/blogCat/:id',FrontController.blogCat)
 
 
 
-//admin
+//adminn
 route.get('/admin/dashboard',checkAuth,AdminController.dashboard)
 route.get('/logout',FrontController.logout)
 
