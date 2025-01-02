@@ -6,6 +6,7 @@ const BlogController = require('../controllers/admin/BlogController')
 const UserController = require('../controllers/UserController')
 const checkAuth=require('../middleware/Auth')
 
+//./ means ek baar file ke bahar  ../ means 2 baar bahar aana hai 
 const route=express.Router()
 
 
